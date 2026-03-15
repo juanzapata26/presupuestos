@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-03-2026 a las 22:39:08
+-- Tiempo de generación: 15-03-2026 a las 01:48:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -56,6 +56,18 @@ CREATE TABLE `detalle` (
   `id_presupuesto` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `detalle`
+--
+
+INSERT INTO `detalle` (`id`, `descripcion`, `cantidad`, `precio`, `id_presupuesto`) VALUES
+(38, 'dd', 2, 4.00, 34),
+(37, 'dsd', 2, 3333.00, 33),
+(36, 'analisis  de datos', 4, 300000.00, 32),
+(35, 'w3', 3, 3.00, 31),
+(34, 'sds', 34, 3.00, 30),
+(33, 'contrato', 2, 333333.00, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +89,7 @@ CREATE TABLE `perfil` (
 --
 
 INSERT INTO `perfil` (`id`, `nombre_comercial`, `propietario`, `telefono`, `direccion`, `email`, `web`) VALUES
-(1, 'Cotizaciones Cymetria S.A', 'Wellmar Carvajal Menddez', '+456-345-908-559', '., Medellìn\r\n                    <br />\r\n                    Colombia.<br />', 'wellmarx14@gmail.com', 'www.cymetria.com');
+(1, 'Soluciones Web-App ', 'Wellmar Carvajal Menddez', '+573137460633', 'Medellín - Colombia.', 'wellmarx14@gmail.com', 'www.viralizando.net');
 
 -- --------------------------------------------------------
 
@@ -154,7 +166,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `detalle`
 --
 ALTER TABLE `detalle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `perfil`
@@ -166,13 +178,13 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT de la tabla `presupuestos`
 --
 ALTER TABLE `presupuestos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `tmp`
 --
 ALTER TABLE `tmp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
