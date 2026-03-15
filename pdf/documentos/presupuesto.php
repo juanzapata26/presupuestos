@@ -1,7 +1,7 @@
 <?php
 /*-------------------------
 Autor: Wellmar Carvajal Mendez
-Web: systemswell.com
+Web: viralizando.net
 Mail: soporte@systemswell.com
 ---------------------------*/
 ob_start();
@@ -25,7 +25,7 @@ $cliente = intval($_GET['cliente']);
 $descripcion = mysqli_real_escape_string($con, (strip_tags($_REQUEST['descripcion'], ENT_QUOTES)));
 
 //Fin de variables por GET
-$sql = mysqli_query($con, "select LAST_INSERT_ID(id) as last from presupuestos order by id desc limit 0,1 ");
+$sql = mysqli_query($con, "select id as last from presupuestos order by id desc limit 0,1 ");
 $rw = mysqli_fetch_array($sql);
 $numero = (isset($rw['last'])) ? $rw['last'] + 1 : 1;
 $perfil = mysqli_query($con, "select * from perfil limit 0,1"); //Obtengo los datos de la emprea
@@ -68,7 +68,7 @@ class PDF extends FPDF
         $this->SetY(-15);
         $this->SetFont('Arial', 'I', 8);
         $this->Cell(0, 10, utf8_decode('Página ') . $this->PageNo() . '/{nb}', 0, 0, 'C');
-        $this->Cell(0, 10, utf8_decode('© systemswell.com ') . date('Y'), 0, 0, 'R');
+        $this->Cell(0, 10, utf8_decode('© viralizando.net ') . date('Y'), 0, 0, 'R');
     }
 }
 

@@ -4,9 +4,12 @@ require_once("config/db.php");//Contiene las variables de configuracion para con
 require_once("config/conexion.php");//Contiene funcion que conecta a la base de datos
 $query_perfil = mysqli_query($con, "select * from perfil where id=1");
 $rw = mysqli_fetch_assoc($query_perfil);
-$sql = mysqli_query($con, "select LAST_INSERT_ID(id) as last from presupuestos order by id desc limit 0,1 ");
+if (!$rw) {
+	$rw = array('nombre_comercial' => '', 'email' => '', 'telefono' => '', 'web' => '', 'direccion' => '');
+}
+$sql = mysqli_query($con, "select id as last from presupuestos order by id desc limit 0,1 ");
 $rws = mysqli_fetch_array($sql);
-$numero = $rws['last'] + 1;
+$numero = (isset($rws['last'])) ? $rws['last'] + 1 : 1;
 ?>
 <html>
 
@@ -35,7 +38,7 @@ $numero = $rws['last'] + 1;
 			<div id="print-area">
 				<div class="row pad-top font-big">
 					<div class="col-lg-4 col-md-4 col-sm-4">
-						<a href="https://systemswell.com/" target="_blank"> <img src="assets/img/logo.jpg"
+						<a href="https://viralizando.net/" target="_blank"> <img src="assets/img/logo.jpg"
 								alt="systemswell" /></a>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4">
